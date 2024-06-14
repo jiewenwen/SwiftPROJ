@@ -22,7 +22,7 @@ struct FoodRowView: View {
 }
 
 #Preview {
-    let fruits = Array(Food.samples.prefix(4))
+    let fruits = Array(Food.samples.prefix(6))
     return NavigationStack{
         List(fruits){fruit in
             NavigationLink(value:fruit){

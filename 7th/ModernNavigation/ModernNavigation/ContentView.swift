@@ -12,22 +12,39 @@ struct ContentView: View {
     @StateObject private var storage = Storage(food: Food.samples)
     
     var body: some View {
-        NavigationStack(path: $navigation.path){
-            List(Category.allCases){category in
-                Section(category.name){
-                    ForEach(storage.food(in: category)){ food in
-                        NavigationLink(value:food){
-                            FoodRowView(food:food)
+        NavigationStack(path:$navigation.path){
+            List{
+                Section("Categories"){
+                    ForEach(Category.allCases){category in
+                        NavigationLink(category.name, value: category)
+                    }
+                }
+                
+                Section("Favorites"){
+                    if storage.favorites.isEmpty{
+                        Text("no favorites added")
+                    }else{
+                        ForEach(storage.favorites){ food in
+                            NavigationLink(value: food){
+                                FoodRowView(food: food)
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("my food")
-            .navigationDestination(for: Food.self){food in
+            .navigationTitle("My food")
+            .navigationDestination(for: Category.self){category in
+            FoodCategoryView(category: category)
+                    .environmentObject(storage)
+            }
+            .navigationDestination(for: Food.self){ food in
                 FoodView(food:food)
                     .environmentObject(navigation)
                     .environmentObject(storage)
-            }        }
+            }
+            
+            
+        }
 
     }
 }

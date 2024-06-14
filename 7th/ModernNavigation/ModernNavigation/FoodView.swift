@@ -27,7 +27,8 @@ struct FoodView: View {
             }else{
                 List{
                     Section("Recents"){
-                        ForEach(storage.recents){ recent in                  NavigationLink(value: recent){
+                        ForEach(storage.recents){ recent in     
+                            NavigationLink(value: recent){
                                 FoodRowView(food: recent)
                             }
                             .disabled(recent == food)
@@ -40,6 +41,16 @@ struct FoodView: View {
         }
         .navigationTitle(food.name)
         .toolbar{
+            Button{
+                storage.toggleFavorite(food)
+            }label:{
+                if storage.isFavorites(food){
+                    Image(systemName: "minus.square")
+                }else{
+                    Image(systemName: "plus.square")
+                }
+            }
+            
             Button{
                 navigation.popToRoot()
             }label: {

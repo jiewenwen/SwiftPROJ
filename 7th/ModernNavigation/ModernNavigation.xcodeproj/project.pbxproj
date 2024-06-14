@@ -18,6 +18,7 @@
 		E17F090D2C16ED6100C1E213 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F090C2C16ED6100C1E213 /* CategoryView.swift */; };
 		E17F090F2C1722FC00C1E213 /* FoodRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F090E2C1722FC00C1E213 /* FoodRowView.swift */; };
 		E17F09112C1724DD00C1E213 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F09102C1724DD00C1E213 /* FoodView.swift */; };
+		E1B766372C19A5A3001750B1 /* FoodCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B766362C19A5A3001750B1 /* FoodCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E17F090C2C16ED6100C1E213 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		E17F090E2C1722FC00C1E213 /* FoodRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRowView.swift; sourceTree = "<group>"; };
 		E17F09102C1724DD00C1E213 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		E1B766362C19A5A3001750B1 /* FoodCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				E17F090C2C16ED6100C1E213 /* CategoryView.swift */,
 				E17F090E2C1722FC00C1E213 /* FoodRowView.swift */,
 				E17F09102C1724DD00C1E213 /* FoodView.swift */,
+				E1B766362C19A5A3001750B1 /* FoodCategoryView.swift */,
 			);
 			path = ModernNavigation;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				E17F09112C1724DD00C1E213 /* FoodView.swift in Sources */,
 				E15221592C116EEB00B7FE70 /* ContentView.swift in Sources */,
+				E1B766372C19A5A3001750B1 /* FoodCategoryView.swift in Sources */,
 				E17F090D2C16ED6100C1E213 /* CategoryView.swift in Sources */,
 				E15221672C11949D00B7FE70 /* Food.swift in Sources */,
 				E15221572C116EEB00B7FE70 /* ModernNavigationApp.swift in Sources */,
