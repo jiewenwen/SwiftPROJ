@@ -8,46 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var navigation = Navigation()
+    //@StateObject private var navigation = Navigation()
     @StateObject private var storage = Storage(food: Food.samples)
+    @State var selectedCategory: Category?
+    @State var selectedFood: Food?
+    @State private var columnVisibility = NavigationSplitViewVisibility.all
     
     var body: some View {
-        NavigationStack(path:$navigation.path){
-            List{
-                Section("Categories"){
-                    ForEach(Category.allCases){category in
-                        NavigationLink(category.name, value: category)
-                    }
+        NavigationSplitView(columnVisibility: $columnVisibility){
+            List(selection: $selectedCategory){
+                // Section("Categories"){
+                ForEach(Category.allCases){category in
+                    NavigationLink(category.name, value: category)
                 }
-                
-                Section("Favorites"){
-                    if storage.favorites.isEmpty{
-                        Text("no favorites added")
-                    }else{
-                        ForEach(storage.favorites){ food in
-                            NavigationLink(value: food){
-                                FoodRowView(food: food)
-                            }
-                        }
-                    }
-                }
+                //}
             }
-            .navigationTitle("My food")
-            .navigationDestination(for: Category.self){category in
-            FoodCategoryView(category: category)
+            .navigationTitle("Categories")
+            
+            } content:{
+                FoodCategoryView(selectedCategory: $selectedCategory, selectedFood: $selectedFood)
+                    .environmentObject(storage)
+                    .onChange(of: selectedCategory, initial: false){
+                        columnVisibility = .doubleColumn
+                    }
+            }detail:{
+                FoodView(selectedCategory: $selectedCategory, selectedFood: $selectedFood)
                     .environmentObject(storage)
             }
-            .navigationDestination(for: Food.self){ food in
-                FoodView(food:food)
-                    .environmentObject(navigation)
-                    .environmentObject(storage)
-            }
-            
-            
+            .navigationSplitViewStyle(.balanced)
         }
-
     }
-}
+
 
 #Preview {
     ContentView()
