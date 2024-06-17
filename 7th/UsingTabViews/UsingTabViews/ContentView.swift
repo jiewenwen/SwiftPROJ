@@ -19,6 +19,9 @@ struct ContentView: View {
                 .tabItem {
                     Label("Currencies",systemImage: "coloncurrencysign.circle.fill")
                 }
+            
+//            Text("Text")
+//                .tabItem { Label("text",systemImage: "hourse.fill") }
         }
     }
 }
