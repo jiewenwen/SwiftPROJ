@@ -22,18 +22,23 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List($todos){$todo in
-            HStack{
-                Text(todo.description)
-                    .strikethrough(todo.done)
-                Spacer()
-                Image(systemName: todo.done ? "checkmark.square":"square")
+        ZStack(alignment:.bottom){
+            List($todos){$todo in
+                HStack{
+                    Text(todo.description)
+                        .strikethrough(todo.done)
+                    Spacer()
+                    Image(systemName: todo.done ? "checkmark.square":"square")
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    todo.done.toggle()
+                }
             }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                todo.done.toggle()
-            }
+            InputTodoView(todos: $todos)
         }
+        .edgesIgnoringSafeArea(.bottom)
+        
     }
 }
 
