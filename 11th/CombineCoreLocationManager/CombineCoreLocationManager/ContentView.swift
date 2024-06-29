@@ -132,7 +132,6 @@ class LocationViewModel: ObservableObject{
         locationManager.start()
     }
     
-    
 }
 
 extension Optional where Wrapped == CLLocation{
