@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCuqWrSV24H0x1ap0J65mn7-UHjlCU9yr4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1002495326854</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cn.jiewen.FirebaseNotes</string>
+	<key>PROJECT_ID</key>
+	<string>fir-notesapp-f9c35</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-notesapp-f9c35.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1002495326854:ios:5698bc42bc8fd36aac6f07</string>
+</dict>
+</plist>

@@ -53,12 +53,14 @@ extension UIApplication {
             }
         }
     }
+    
     func login() {
         state = .busy
         guard let clientID = FirebaseApp.app()?.options.clientID,
               let rootViewController = UIApplication.currentRootViewController else {
             return
         }
+        
         let configuration = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = configuration
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController, hint: nil) { result, error in
